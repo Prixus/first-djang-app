@@ -1,1 +1,1 @@
-# first-djang-app
+# first-django-app
