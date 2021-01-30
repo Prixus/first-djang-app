@@ -31,7 +31,6 @@ We are setting our template directory here
 '''
 TEMPLATE_DIR = BASE_DIR / 'templates'
 
-
 # Application definition
 
 INSTALLED_APPS = [
