@@ -7,4 +7,5 @@ from django.http import HttpResponse
 Returns the Hello World Text
 '''
 def home(request):
-    return HttpResponse('Hello world')
+    return HttpResponse('<h1>Hello world</h1>')
+ 
