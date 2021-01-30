@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,11 @@ SECRET_KEY = '9)wws1_6o4sx+rxa1b+7$q3l7k*z1i0clk5&&!r)ne%a7#dn^f'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+'''
+We are setting our template directory here
+'''
+TEMPLATE_DIR = BASE_DIR / 'templates'
 
 
 # Application definition
@@ -54,7 +60,7 @@ ROOT_URLCONF = 'first_django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
