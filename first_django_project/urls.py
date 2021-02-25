@@ -21,6 +21,6 @@ from django.urls import path, include
  routes from our `first_app` application
 '''
 urlpatterns = [
-    path('', include('first_app.urls')),
+    path('restaurant', include('restaurant.urls')),
     path('admin/', admin.site.urls),
 ]
