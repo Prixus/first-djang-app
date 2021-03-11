@@ -65,7 +65,19 @@ https://templatemo.com/tm-539-simple-house
 			<div class="row tm-gallery">
 				<!-- gallery page 1 -->
 				<div id="tm-gallery-page-pizza" class="tm-gallery-page">
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+					{% for menu_item in menu_items %}
+						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+							<figure>
+								<img src="{% static  menu_item.img %}" alt="Image" class="img-fluid tm-gallery-img" />
+								<figcaption>
+									<h4 class="tm-gallery-title">{{ menu_item.name }}</h4>
+									<p class="tm-gallery-description">{{ menu_item.description }}</p>
+									<p class="tm-gallery-price">${{ menu_item.price }}</p>
+								</figcaption>
+							</figure>
+						</article>
+						{% endfor %}
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 						<figure>
 							<img src="{% static 'img/gallery/01.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
@@ -104,8 +116,8 @@ https://templatemo.com/tm-539-simple-house
 								<p class="tm-gallery-price">$25.50</p>
 							</figcaption>
 						</figure>
-					</article>
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+					</article> -->
+					<!-- <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 						<figure>
 							<img src="{% static 'img/gallery/05.jpg' %}" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
@@ -144,7 +156,7 @@ https://templatemo.com/tm-539-simple-house
 								<p class="tm-gallery-price">$15</p>
 							</figcaption>
 						</figure>
-					</article>
+					</article> -->
 				</div> <!-- gallery page 1 -->
 
 				<!-- gallery page 2 -->
