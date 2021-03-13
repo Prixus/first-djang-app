@@ -2,9 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-class MenuItem:
-    id: int
-    name: str
-    img: str
-    description: str
-    price: int
+class MenuItem(models.Model):
+    name = models.CharField(max_length=100)
+    img = models.ImageField(upload_to='pics')
+    description = models.TextField()
+    price = models.IntegerField
