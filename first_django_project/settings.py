@@ -24,7 +24,7 @@ SECRET_KEY = '9)wws1_6o4sx+rxa1b+7$q3l7k*z1i0clk5&&!r)ne%a7#dn^f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['intense-stream-65718.herokuapp.com', '127.0.0.1']
 
 '''
 We are setting our template directory here
