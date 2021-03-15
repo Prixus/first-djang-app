@@ -9,12 +9,10 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-# import django_heroku
-
+import django_heroku
+import dj_database_url
 from pathlib import Path
 
-# Activate Django-Heroku.
-# django_heroku.settings(locals())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'mysterious-oasis-26223.herokuapp.com'
-]
+    ]
 
 '''
 We are setting our template directory here
@@ -144,6 +142,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
