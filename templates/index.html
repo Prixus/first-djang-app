@@ -1,24 +1,7 @@
+{% extends 'Base/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Simple House Template</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
-	<link href="{% static 'css/templatemo-style.css' %}" rel="stylesheet" />
-</head>
-<!--
-
-Simple House
-
-https://templatemo.com/tm-539-simple-house
-
--->
-<body>
-
+{% block title %} Restaurant {% endblock %}
+{% block content %}
 	<div class="container">
 	<!-- Top box -->
 		<!-- Logo & Site Name -->
@@ -68,7 +51,7 @@ https://templatemo.com/tm-539-simple-house
 					{% for menu_item in menu_items %}
 						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 							<figure>
-								<img src="{% static  menu_item.img %}" alt="Image" class="img-fluid tm-gallery-img" />
+								<img src="{{ menu_item.img.url }}" alt="Image" class="img-fluid tm-gallery-img" />
 								<figcaption>
 									<h4 class="tm-gallery-title">{{ menu_item.name }}</h4>
 									<p class="tm-gallery-description">{{ menu_item.description }}</p>
@@ -312,21 +295,22 @@ https://templatemo.com/tm-539-simple-house
             | Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
 		</footer>
 	</div>
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<script src="{% static 'js/parallax.min.js' %}"></script>
-	<script>
-		$(document).ready(function(){
-			// Handle click on paging links
-			$('.tm-paging-link').click(function(e){
-				e.preventDefault();
+{% endblock %}
+{% block js %}
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/parallax.min.js' %}"></script>
+		<script>
+			$(document).ready(function(){
+				// Handle click on paging links
+				$('.tm-paging-link').click(function(e){
+					e.preventDefault();
 
-				var page = $(this).text().toLowerCase();
-				$('.tm-gallery-page').addClass('hidden');
-				$('#tm-gallery-page-' + page).removeClass('hidden');
-				$('.tm-paging-link').removeClass('active');
-				$(this).addClass("active");
+					var page = $(this).text().toLowerCase();
+					$('.tm-gallery-page').addClass('hidden');
+					$('#tm-gallery-page-' + page).removeClass('hidden');
+					$('.tm-paging-link').removeClass('active');
+					$(this).addClass("active");
+				});
 			});
-		});
-	</script>
-</body>
-</html>
+		</script>
+{% endblock %}
