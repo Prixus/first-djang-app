@@ -40,6 +40,7 @@ TEMPLATE_DIR = BASE_DIR / 'templates'
 # Application definition
 
 INSTALLED_APPS = [
+    'restaurant.apps.RestaurantConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
